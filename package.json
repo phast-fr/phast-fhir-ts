@@ -14,6 +14,7 @@
   "files": [
     "/dist"
   ],
+  "repository": "https://github.com/phast-fr/phast-fhir-ts",
   "scripts": {
     "clean": "rimraf dist",
     "start": "npm-run-all clean --parallel watch:build watch:server --print-label",
