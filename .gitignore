@@ -1,5 +1,6 @@
 # Project exclude paths
 /dist/
+/lib/
 /node_modules/
 /.idea/
 /phast-fhir-ts.iml

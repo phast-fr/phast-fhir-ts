@@ -2,7 +2,7 @@
  * MIT License
  *
  * Copyright (c) 2021 PHAST SARL
-
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -118,15 +118,11 @@ export interface AccountGuarantor extends BackboneElement {
  */
 export type AccountStatus = 'active' | 'inactive' | 'enteredInError' | 'onHold' | 'unknown';
 
-
-
 /**
  * Defines behavior for an action or a group for how many times that item may be repeated.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ActionCardinalityBehavior = 'single' | 'multiple';
-
-
 
 /**
  * Defines the kinds of conditions that can appear on actions.
@@ -134,15 +130,11 @@ export type ActionCardinalityBehavior = 'single' | 'multiple';
  */
 export type ActionConditionKind = 'applicability' | 'start' | 'stop';
 
-
-
 /**
  * Defines organization behavior of a group.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ActionGroupingBehavior = 'visualGroup' | 'logicalGroup' | 'sentenceGroup';
-
-
 
 /**
  * The type of participant in the activity.
@@ -150,23 +142,26 @@ export type ActionGroupingBehavior = 'visualGroup' | 'logicalGroup' | 'sentenceG
  */
 export type ActionParticipantType = 'patient' | 'practitioner' | 'relatedPerson' | 'device';
 
-
-
 /**
  * Defines selection frequency behavior for an action or group.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ActionPrecheckBehavior = 'yes' | 'no';
 
-
-
 /**
  * Defines the types of relationships between actions.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ActionRelationshipType = 'beforeStart' | 'before' | 'beforeEnd' | 'concurrentWithStart' | 'concurrent' | 'concurrentWithEnd' | 'afterStart' | 'after' | 'afterEnd';
-
-
+export type ActionRelationshipType =
+  | 'beforeStart'
+  | 'before'
+  | 'beforeEnd'
+  | 'concurrentWithStart'
+  | 'concurrent'
+  | 'concurrentWithEnd'
+  | 'afterStart'
+  | 'after'
+  | 'afterEnd';
 
 /**
  * Defines expectations around whether an action or action group is required.
@@ -174,15 +169,11 @@ export type ActionRelationshipType = 'beforeStart' | 'before' | 'beforeEnd' | 'c
  */
 export type ActionRequiredBehavior = 'must' | 'could' | 'mustUnlessDocumented';
 
-
-
 /**
  * Defines selection behavior of a group.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ActionSelectionBehavior = 'any' | 'all' | 'allOrNone' | 'exactlyOne' | 'atMostOne' | 'oneOrMore';
-
-
 
 /**
  * This resource allows for the definition of some activity to be performed, independent of a particular patient, practitioner, or other performance context.
@@ -484,23 +475,17 @@ export interface Address extends Element {
  */
 export type AddressType = 'postal' | 'physical' | 'both';
 
-
-
 /**
  * The use of an address.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type AddressUse = 'home' | 'work' | 'temp' | 'old' | 'billing';
 
-
-
 /**
  *
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type AdministrativeGender = 'male' | 'female' | 'other' | 'unknown';
-
-
 
 /**
  * Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.
@@ -595,8 +580,6 @@ export interface AdverseEvent extends DomainResource {
  */
 export type AdverseEventActuality = 'actual' | 'potential';
 
-
-
 /**
  * Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.
  */
@@ -637,16 +620,13 @@ export interface AdverseEventSuspectEntity extends BackboneElement {
  * A duration of time during which an organism (or a process) has existed.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-export interface Age extends Quantity {
-}
+export interface Age extends Quantity {}
 
 /**
  * How resource references can be aggregated.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type AggregationMode = 'contained' | 'referenced' | 'bundled';
-
-
 
 /**
  * Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.
@@ -741,15 +721,11 @@ export interface AllergyIntolerance extends DomainResource {
  */
 export type AllergyIntoleranceCategory = 'food' | 'medication' | 'environment' | 'biologic';
 
-
-
 /**
  * Estimate of the potential clinical harm, or seriousness, of a reaction to an identified substance.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type AllergyIntoleranceCriticality = 'low' | 'high' | 'unableToAssess';
-
-
 
 /**
  * Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.
@@ -791,15 +767,11 @@ export interface AllergyIntoleranceReaction extends BackboneElement {
  */
 export type AllergyIntoleranceSeverity = 'mild' | 'moderate' | 'severe';
 
-
-
 /**
  * Identification of the underlying physiological mechanism for a Reaction Risk.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type AllergyIntoleranceType = 'allergy' | 'intolerance';
-
-
 
 /**
  * A  text note which also  contains information about who made the statement and when.
@@ -990,9 +962,17 @@ export interface AppointmentResponse extends DomainResource {
  * The free/busy status of an appointment.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type AppointmentStatus = 'proposed' | 'pending' | 'booked' | 'arrived' | 'fulfilled' | 'cancelled' | 'noshow' | 'enteredInError' | 'checkedIn' | 'waitlist';
-
-
+export type AppointmentStatus =
+  | 'proposed'
+  | 'pending'
+  | 'booked'
+  | 'arrived'
+  | 'fulfilled'
+  | 'cancelled'
+  | 'noshow'
+  | 'enteredInError'
+  | 'checkedIn'
+  | 'waitlist';
 
 /**
  * The type of direction to use for assertion.
@@ -1000,23 +980,40 @@ export type AppointmentStatus = 'proposed' | 'pending' | 'booked' | 'arrived' | 
  */
 export type AssertionDirectionType = 'response' | 'request';
 
-
-
 /**
  * The type of operator to use for assertion.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type AssertionOperatorType = 'equals' | 'notEquals' | 'in' | 'notIn' | 'greaterThan' | 'lessThan' | 'empty' | 'notEmpty' | 'contains' | 'notContains' | 'eval';
-
-
+export type AssertionOperatorType =
+  | 'equals'
+  | 'notEquals'
+  | 'in'
+  | 'notIn'
+  | 'greaterThan'
+  | 'lessThan'
+  | 'empty'
+  | 'notEmpty'
+  | 'contains'
+  | 'notContains'
+  | 'eval';
 
 /**
  * The type of response code to use for assertion.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type AssertionResponseTypes = 'okay' | 'created' | 'noContent' | 'notModified' | 'bad' | 'forbidden' | 'notFound' | 'methodNotAllowed' | 'conflict' | 'gone' | 'preconditionFailed' | 'unprocessable';
-
-
+export type AssertionResponseTypes =
+  | 'okay'
+  | 'created'
+  | 'noContent'
+  | 'notModified'
+  | 'bad'
+  | 'forbidden'
+  | 'notFound'
+  | 'methodNotAllowed'
+  | 'conflict'
+  | 'gone'
+  | 'preconditionFailed'
+  | 'unprocessable';
 
 /**
  * For referring to data content defined in other formats.
@@ -1114,8 +1111,6 @@ export interface AuditEvent extends DomainResource {
  */
 export type AuditEventAction = 'C' | 'R' | 'U' | 'D' | 'E';
 
-
-
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
  */
@@ -1171,8 +1166,6 @@ export interface AuditEventAgent extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type AuditEventAgentNetworkType = '_1' | '_2' | '_3' | '_4' | '_5';
-
-
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
@@ -1254,8 +1247,6 @@ export interface AuditEventNetwork extends BackboneElement {
  */
 export type AuditEventOutcome = '_0' | '_4' | '_8' | '_12';
 
-
-
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
  */
@@ -1293,7 +1284,6 @@ export interface BackboneElement extends Element {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type base64Binary = string;
-
 
 /**
  * Basic is used for handling concepts not yet defined in FHIR, narrative-only resources that don't map to an existing resource, and custom resources not appropriate for inclusion in the FHIR specification.
@@ -1346,8 +1336,6 @@ export interface Binary extends Resource {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type BindingStrength = 'required' | 'extensible' | 'preferred' | 'example';
-
-
 
 /**
  * A material substance originating from a biological entity intended to be transplanted or infused
@@ -1406,8 +1394,6 @@ export interface BiologicallyDerivedProduct extends DomainResource {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type BiologicallyDerivedProductCategory = 'organ' | 'tissue' | 'fluid' | 'cells' | 'biologicalAgent';
-
-
 
 /**
  * A material substance originating from a biological entity intended to be transplanted or infused
@@ -1484,8 +1470,6 @@ export interface BiologicallyDerivedProductProcessing extends BackboneElement {
  */
 export type BiologicallyDerivedProductStatus = 'available' | 'unavailable';
 
-
-
 /**
  * A material substance originating from a biological entity intended to be transplanted or infused
  * into another (possibly the same) biological entity.
@@ -1514,8 +1498,6 @@ export interface BiologicallyDerivedProductStorage extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type BiologicallyDerivedProductStorageScale = 'farenheit' | 'celsius' | 'kelvin';
-
-
 
 /**
  * Record details about an anatomical structure.  This resource may be used when a coded concept does not provide the necessary detail needed for the use case.
@@ -1555,9 +1537,6 @@ export interface BodyStructure extends DomainResource {
    */
   patient: Reference;
 }
-
-
-
 
 /**
  * A container for a collection of resources.
@@ -1714,9 +1693,16 @@ export interface BundleSearch extends BackboneElement {
  * Indicates the purpose of a bundle - how it is intended to be used.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type BundleType = 'document' | 'message' | 'transaction' | 'transactionResponse' | 'batch' | 'batchResponse' | 'history' | 'searchset' | 'collection';
-
-
+export type BundleType =
+  | 'document'
+  | 'message'
+  | 'transaction'
+  | 'transactionResponse'
+  | 'batch'
+  | 'batchResponse'
+  | 'history'
+  | 'searchset'
+  | 'collection';
 
 /**
  * A URI that is a reference to a canonical URL on a FHIR resource
@@ -1724,7 +1710,6 @@ export type BundleType = 'document' | 'message' | 'transaction' | 'transactionRe
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  */
 export type canonical = string;
-
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -1920,8 +1905,6 @@ export interface CapabilityStatementInteraction1 extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type CapabilityStatementKind = 'instance' | 'capability' | 'requirements';
-
-
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -2276,17 +2259,30 @@ export interface CarePlanActivity extends BackboneElement {
  * Resource types defined as part of FHIR that can be represented as in-line definitions of a care plan activity.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type CarePlanActivityKind = 'Appointment' | 'CommunicationRequest' | 'DeviceRequest' | 'MedicationRequest' | 'NutritionOrder' | 'Task' | 'ServiceRequest' | 'VisionPrescription';
-
-
+export type CarePlanActivityKind =
+  | 'Appointment'
+  | 'CommunicationRequest'
+  | 'DeviceRequest'
+  | 'MedicationRequest'
+  | 'NutritionOrder'
+  | 'Task'
+  | 'ServiceRequest'
+  | 'VisionPrescription';
 
 /**
  * Codes that reflect the current state of a care plan activity within its overall life cycle.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type CarePlanActivityStatus = 'notStarted' | 'scheduled' | 'inProgress' | 'onHold' | 'completed' | 'cancelled' | 'stopped' | 'unknown' | 'enteredInError';
-
-
+export type CarePlanActivityStatus =
+  | 'notStarted'
+  | 'scheduled'
+  | 'inProgress'
+  | 'onHold'
+  | 'completed'
+  | 'cancelled'
+  | 'stopped'
+  | 'unknown'
+  | 'enteredInError';
 
 /**
  * Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions.
@@ -2380,8 +2376,6 @@ export interface CarePlanDetail extends BackboneElement {
  */
 export type CarePlanIntent = 'proposal' | 'plan' | 'order' | 'option';
 
-
-
 /**
  * The Care Team includes all the people and organizations who plan to participate in the coordination and delivery of care for a patient.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -2469,8 +2463,6 @@ export interface CareTeamParticipant extends BackboneElement {
  */
 export type CareTeamStatus = 'proposed' | 'active' | 'suspended' | 'inactive' | 'enteredInError';
 
-
-
 /**
  * Catalog entries are wrappers that contextualize items included in a catalog.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -2549,8 +2541,6 @@ export interface CatalogEntryRelatedEntry extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type CatalogEntryRelationType = 'triggers' | 'isReplacedBy';
-
-
 
 /**
  * The resource ChargeItem describes the provision of healthcare provider products for a certain patient, therefore referring not only to the product, but containing in addition details of the provision, like date, time, amounts and participating organizations and persons. Main Usage of the ChargeItem is to enable the billing process and internal cost allocation.
@@ -2846,9 +2836,14 @@ export interface ChargeItemPerformer extends BackboneElement {
  * Codes identifying the lifecycle stage of a ChargeItem.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ChargeItemStatus = 'planned' | 'billable' | 'notBillable' | 'aborted' | 'billed' | 'enteredInError' | 'unknown';
-
-
+export type ChargeItemStatus =
+  | 'planned'
+  | 'billable'
+  | 'notBillable'
+  | 'aborted'
+  | 'billed'
+  | 'enteredInError'
+  | 'unknown';
 
 /**
  * A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.
@@ -3282,8 +3277,6 @@ export interface ClaimProcedure extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ClaimProcessingCodes = 'queued' | 'complete' | 'error' | 'partial';
-
-
 
 /**
  * A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.
@@ -4015,8 +4008,6 @@ export interface ClinicalImpressionInvestigation extends BackboneElement {
  */
 export type ClinicalImpressionStatus = 'inProgress' | 'completed' | 'enteredInError';
 
-
-
 /**
  * A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
@@ -4038,14 +4029,11 @@ export interface CodeableConcept extends Element {
   text?: string;
 }
 
-
 /**
  * The degree to which the server supports the code search parameter on ValueSet, if it is supported.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type CodeSearchSupport = 'explicit' | 'all';
-
-
 
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
@@ -4194,8 +4182,6 @@ export interface CodeSystemConcept extends BackboneElement {
  */
 export type CodeSystemContentMode = 'notPresent' | 'example' | 'fragment' | 'complete' | 'supplement';
 
-
-
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
  */
@@ -4241,8 +4227,6 @@ export interface CodeSystemFilter extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type CodeSystemHierarchyMeaning = 'groupedBy' | 'isA' | 'partOf' | 'classifiedWith';
-
-
 
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
@@ -4652,8 +4636,6 @@ export interface CompartmentDefinitionResource extends BackboneElement {
  */
 export type CompartmentType = 'Patient' | 'Encounter' | 'RelatedPerson' | 'Practitioner' | 'Device';
 
-
-
 /**
  * A set of healthcare-related information that is assembled together into a single logical package that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -4726,8 +4708,6 @@ export interface Composition extends DomainResource {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type CompositionAttestationMode = 'personal' | 'professional' | 'legal' | 'official';
-
-
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical package that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
@@ -4834,8 +4814,6 @@ export interface CompositionSection extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type CompositionStatus = 'preliminary' | 'final' | 'amended' | 'enteredInError';
-
-
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
@@ -4968,9 +4946,17 @@ export interface ConceptMapElement extends BackboneElement {
  *
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ConceptMapEquivalence = 'relatedto' | 'equivalent' | 'equal' | 'wider' | 'subsumes' | 'narrower' | 'specializes' | 'inexact' | 'unmatched' | 'disjoint';
-
-
+export type ConceptMapEquivalence =
+  | 'relatedto'
+  | 'equivalent'
+  | 'equal'
+  | 'wider'
+  | 'subsumes'
+  | 'narrower'
+  | 'specializes'
+  | 'inexact'
+  | 'unmatched'
+  | 'disjoint';
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
@@ -5007,8 +4993,6 @@ export interface ConceptMapGroup extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ConceptMapGroupUnmappedMode = 'provided' | 'fixed' | 'otherMap';
-
-
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
@@ -5175,15 +5159,11 @@ export interface Condition extends DomainResource {
  */
 export type ConditionalDeleteStatus = 'notSupported' | 'single' | 'multiple';
 
-
-
 /**
  * A code that indicates how the server supports conditional read.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ConditionalReadStatus = 'notSupported' | 'modifiedSince' | 'notMatch' | 'fullSupport';
-
-
 
 /**
  * A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.
@@ -5314,8 +5294,6 @@ export interface ConsentData extends BackboneElement {
  */
 export type ConsentDataMeaning = 'instance' | 'related' | 'dependents' | 'authoredby';
 
-
-
 /**
  * A record of a healthcare consumerâ€™s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
  */
@@ -5386,15 +5364,11 @@ export interface ConsentProvision extends BackboneElement {
  */
 export type ConsentProvisionType = 'deny' | 'permit';
 
-
-
 /**
  * Indicates the state of the consent.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ConsentState = 'draft' | 'proposed' | 'active' | 'rejected' | 'inactive' | 'enteredInError';
-
-
 
 /**
  * A record of a healthcare consumerâ€™s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
@@ -5419,8 +5393,6 @@ export interface ConsentVerification extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ConstraintSeverity = 'error' | 'warning';
-
-
 
 /**
  * Specifies contact information for a person or organization.
@@ -5470,15 +5442,11 @@ export interface ContactPoint extends Element {
  */
 export type ContactPointSystem = 'phone' | 'fax' | 'email' | 'pager' | 'url' | 'sms' | 'other';
 
-
-
 /**
  * Use of contact point.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ContactPointUse = 'home' | 'work' | 'temp' | 'old' | 'mobile';
-
-
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -5985,17 +5953,43 @@ export interface ContractParty extends BackboneElement {
  * Status of the publication of contract content.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ContractResourcePublicationStatusCodes = 'amended' | 'appended' | 'cancelled' | 'disputed' | 'enteredInError' | 'executable' | 'executed' | 'negotiable' | 'offered' | 'policy' | 'rejected' | 'renewed' | 'revoked' | 'resolved' | 'terminated';
-
-
+export type ContractResourcePublicationStatusCodes =
+  | 'amended'
+  | 'appended'
+  | 'cancelled'
+  | 'disputed'
+  | 'enteredInError'
+  | 'executable'
+  | 'executed'
+  | 'negotiable'
+  | 'offered'
+  | 'policy'
+  | 'rejected'
+  | 'renewed'
+  | 'revoked'
+  | 'resolved'
+  | 'terminated';
 
 /**
  * A code specifying the state of the resource instance.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ContractResourceStatusCodes = 'amended' | 'appended' | 'cancelled' | 'disputed' | 'enteredInError' | 'executable' | 'executed' | 'negotiable' | 'offered' | 'policy' | 'rejected' | 'renewed' | 'revoked' | 'resolved' | 'terminated';
-
-
+export type ContractResourceStatusCodes =
+  | 'amended'
+  | 'appended'
+  | 'cancelled'
+  | 'disputed'
+  | 'enteredInError'
+  | 'executable'
+  | 'executed'
+  | 'negotiable'
+  | 'offered'
+  | 'policy'
+  | 'rejected'
+  | 'renewed'
+  | 'revoked'
+  | 'resolved'
+  | 'terminated';
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -6214,14 +6208,11 @@ export interface Contributor extends Element {
  */
 export type ContributorType = 'author' | 'editor' | 'reviewer' | 'endorser';
 
-
-
 /**
  * A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-export interface Count extends Quantity {
-}
+export interface Count extends Quantity {}
 
 /**
  * Financial instrument which may be used to reimburse or pay for health care products and services. Includes both insurance and self-payment.
@@ -6830,15 +6821,11 @@ export interface DataRequirementSort extends Element {
  */
 export type date = string;
 
-
-
 /**
  * A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type dateTime = string;
-
-
 
 /**
  * The days of the week.
@@ -6846,15 +6833,12 @@ export type dateTime = string;
  */
 export type DaysOfWeek = 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat' | 'sun';
 
-
-
 /**
  * A rational number with implicit precision
  * Do not use an IEEE type floating point type, instead use something that works like a true decimal, with inbuilt precision (e.g. Java BigInteger)
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type decimal = number;
-
 
 /**
  * Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction, Ineffective treatment frequency, Procedure-condition conflict, etc.
@@ -6952,8 +6936,6 @@ export interface DetectedIssueMitigation extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type DetectedIssueSeverity = 'high' | 'moderate' | 'low';
-
-
 
 /**
  * A type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.
@@ -7348,15 +7330,11 @@ export interface DeviceMetricCalibration extends BackboneElement {
  */
 export type DeviceMetricCalibrationState = 'notCalibrated' | 'calibrationRequired' | 'calibrated' | 'unspecified';
 
-
-
 /**
  * Describes the type of a metric calibration.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type DeviceMetricCalibrationType = 'unspecified' | 'offset' | 'gain' | 'twoPoint';
-
-
 
 /**
  * Describes the category of the metric.
@@ -7364,15 +7342,11 @@ export type DeviceMetricCalibrationType = 'unspecified' | 'offset' | 'gain' | 't
  */
 export type DeviceMetricCategory = 'measurement' | 'setting' | 'calculation' | 'unspecified';
 
-
-
 /**
  * Describes the typical color of representation.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type DeviceMetricColor = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white';
-
-
 
 /**
  * Describes the operational status of the DeviceMetric.
@@ -7380,15 +7354,17 @@ export type DeviceMetricColor = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 
  */
 export type DeviceMetricOperationalStatus = 'on' | 'off' | 'standby' | 'enteredInError';
 
-
-
 /**
  * The type of name the device is referred by.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type DeviceNameType = 'udiLabelName' | 'userFriendlyName' | 'patientReportedName' | 'manufacturerName' | 'modelName' | 'other';
-
-
+export type DeviceNameType =
+  | 'udiLabelName'
+  | 'userFriendlyName'
+  | 'patientReportedName'
+  | 'manufacturerName'
+  | 'modelName'
+  | 'other';
 
 /**
  * A type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.
@@ -7674,8 +7650,6 @@ export interface DeviceUseStatement extends DomainResource {
  */
 export type DeviceUseStatementStatus = 'active' | 'completed' | 'enteredInError' | 'intended' | 'stopped' | 'onHold';
 
-
-
 /**
  * A type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.
  */
@@ -7795,9 +7769,17 @@ export interface DiagnosticReportMedia extends BackboneElement {
  * The status of the diagnostic report.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type DiagnosticReportStatus = 'registered' | 'partial' | 'preliminary' | 'final' | 'amended' | 'corrected' | 'appended' | 'cancelled' | 'enteredInError' | 'unknown';
-
-
+export type DiagnosticReportStatus =
+  | 'registered'
+  | 'partial'
+  | 'preliminary'
+  | 'final'
+  | 'amended'
+  | 'corrected'
+  | 'appended'
+  | 'cancelled'
+  | 'enteredInError'
+  | 'unknown';
 
 /**
  * How an element value is interpreted when discrimination is evaluated.
@@ -7805,14 +7787,11 @@ export type DiagnosticReportStatus = 'registered' | 'partial' | 'preliminary' | 
  */
 export type DiscriminatorType = 'value' | 'exists' | 'pattern' | 'type' | 'profile';
 
-
-
 /**
  * A length - a value with a unit that is a physical distance.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-export interface Distance extends Quantity {
-}
+export interface Distance extends Quantity {}
 
 /**
  * A collection of documents compiled for a purpose together with metadata that applies to the collection.
@@ -7888,8 +7867,6 @@ export interface DocumentManifestRelated extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type DocumentMode = 'producer' | 'consumer';
-
-
 
 /**
  * A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.
@@ -8030,15 +8007,11 @@ export interface DocumentReferenceRelatesTo extends BackboneElement {
  */
 export type DocumentReferenceStatus = 'current' | 'superseded' | 'enteredInError';
 
-
-
 /**
  * The type of relationship between documents.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type DocumentRelationshipType = 'replaces' | 'transforms' | 'signs' | 'appends';
-
-
 
 /**
  * A resource that includes narrative, extensions, and contained resources.
@@ -8162,8 +8135,7 @@ export interface DosageDoseAndRate extends BackboneElement {
  * A length of time.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-export interface Duration extends Quantity {
-}
+export interface Duration extends Quantity {}
 
 /**
  * The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.
@@ -9620,23 +9592,17 @@ export interface ElementDefinitionType extends BackboneElement {
  */
 export type EligibilityRequestPurpose = 'authRequirements' | 'benefits' | 'discovery' | 'validation';
 
-
-
 /**
  * A code specifying the types of information being requested.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type EligibilityResponsePurpose = 'authRequirements' | 'benefits' | 'discovery' | 'validation';
 
-
-
 /**
  * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type EnableWhenBehavior = 'all' | 'any';
-
-
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -9839,8 +9805,6 @@ export interface EncounterLocation extends BackboneElement {
  */
 export type EncounterLocationStatus = 'planned' | 'active' | 'reserved' | 'completed';
 
-
-
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
  */
@@ -9863,7 +9827,16 @@ export interface EncounterParticipant extends BackboneElement {
  * Current state of the encounter.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type EncounterStatus = 'planned' | 'arrived' | 'triaged' | 'inProgress' | 'onleave' | 'finished' | 'cancelled' | 'enteredInError' | 'unknown';
+export type EncounterStatus =
+  | 'planned'
+  | 'arrived'
+  | 'triaged'
+  | 'inProgress'
+  | 'onleave'
+  | 'finished'
+  | 'cancelled'
+  | 'enteredInError'
+  | 'unknown';
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -9878,8 +9851,6 @@ export interface EncounterStatusHistory extends BackboneElement {
    */
   period: Period;
 }
-
-
 
 /**
  * The technical details of an endpoint that can be used for electronic services, such as for web services providing XDS.b or a REST endpoint for another FHIR server. This may include any security context information.
@@ -9937,8 +9908,6 @@ export interface Endpoint extends DomainResource {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type EndpointStatus = 'active' | 'suspended' | 'error' | 'off' | 'enteredInError' | 'test';
-
-
 
 /**
  * This resource provides the insurance enrollment details to the insurer regarding a specified coverage.
@@ -10091,7 +10060,14 @@ export interface EpisodeOfCareDiagnosis extends BackboneElement {
  * The status of the episode of care.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type EpisodeOfCareStatus = 'planned' | 'waitlist' | 'active' | 'onhold' | 'finished' | 'cancelled' | 'enteredInError';
+export type EpisodeOfCareStatus =
+  | 'planned'
+  | 'waitlist'
+  | 'active'
+  | 'onhold'
+  | 'finished'
+  | 'cancelled'
+  | 'enteredInError';
 
 /**
  * An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.
@@ -10107,15 +10083,11 @@ export interface EpisodeOfCareStatusHistory extends BackboneElement {
   period: Period;
 }
 
-
-
 /**
  * The mode of a message capability statement.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type EventCapabilityMode = 'sender' | 'receiver';
-
-
 
 /**
  * The EventDefinition resource provides a reusable description of when a particular event can occur.
@@ -10244,17 +10216,47 @@ export interface EventDefinition extends DomainResource {
  * The status of the communication.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type EventStatus = 'preparation' | 'inProgress' | 'notDone' | 'onHold' | 'stopped' | 'completed' | 'enteredInError' | 'unknown';
-
-
+export type EventStatus =
+  | 'preparation'
+  | 'inProgress'
+  | 'notDone'
+  | 'onHold'
+  | 'stopped'
+  | 'completed'
+  | 'enteredInError'
+  | 'unknown';
 
 /**
  * Real world event relating to the schedule.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type EventTiming = 'MORN' | 'MORNEarly' | 'MORNLate' | 'NOON' | 'AFT' | 'AFTEarly' | 'AFTLate' | 'EVE' | 'EVEEarly' | 'EVELate' | 'NIGHT' | 'PHS' | 'HS' | 'WAKE' | 'C' | 'CM' | 'CD' | 'CV' | 'AC' | 'ACM' | 'ACD' | 'ACV' | 'PC' | 'PCM' | 'PCD' | 'PCV';
-
-
+export type EventTiming =
+  | 'MORN'
+  | 'MORNEarly'
+  | 'MORNLate'
+  | 'NOON'
+  | 'AFT'
+  | 'AFTEarly'
+  | 'AFTLate'
+  | 'EVE'
+  | 'EVEEarly'
+  | 'EVELate'
+  | 'NIGHT'
+  | 'PHS'
+  | 'HS'
+  | 'WAKE'
+  | 'C'
+  | 'CM'
+  | 'CD'
+  | 'CV'
+  | 'AC'
+  | 'ACM'
+  | 'ACD'
+  | 'ACV'
+  | 'PC'
+  | 'PCM'
+  | 'PCD'
+  | 'PCV';
 
 /**
  * The Evidence resource describes the conditional state (population and any exposures being compared within the population) and outcome (if specified) that the knowledge (evidence, assertion, recommendation) is about.
@@ -10562,8 +10564,6 @@ export interface EvidenceVariableCharacteristic extends BackboneElement {
  */
 export type EvidenceVariableType = 'dichotomous' | 'continuous' | 'descriptive';
 
-
-
 /**
  * Example of workflow instance.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -10666,8 +10666,6 @@ export interface ExampleScenarioActor extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ExampleScenarioActorType = 'person' | 'entity';
-
-
 
 /**
  * Example of workflow instance.
@@ -11628,8 +11626,6 @@ export interface ExplanationOfBenefitRelated extends BackboneElement {
  */
 export type ExplanationOfBenefitStatus = 'active' | 'cancelled' | 'draft' | 'enteredInError';
 
-
-
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
  */
@@ -11796,8 +11792,6 @@ export interface ExplanationOfBenefitTotal extends BackboneElement {
  */
 export type ExposureState = 'exposure' | 'exposureAlternative';
 
-
-
 /**
  * A expression that is evaluated in a specified context and returns a value. The context of use of the expression must specify the context in which the expression is evaluated, and how the result of the expression is used.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
@@ -11830,8 +11824,6 @@ export interface Expression extends Element {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ExpressionLanguage = 'textCql' | 'textFhirpath' | 'applicationXFhirQuery';
-
-
 
 /**
  * Optional Extension Element - found in all resources.
@@ -12050,15 +12042,11 @@ export interface Extension extends Element {
  */
 export type ExtensionContextType = 'fhirpath' | 'element' | 'extension';
 
-
-
 /**
  * A code that identifies the status of the family history record.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type FamilyHistoryStatus = 'partial' | 'completed' | 'enteredInError' | 'healthUnknown';
-
-
 
 /**
  * Significant health conditions for a person related to the patient relevant in the context of care for the patient.
@@ -12215,39 +12203,60 @@ export interface FamilyMemberHistoryCondition extends BackboneElement {
  */
 export type FHIRDeviceStatus = 'active' | 'inactive' | 'enteredInError' | 'unknown';
 
-
-
 /**
  * A code to indicate if the substance is actively used.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type FHIRSubstanceStatus = 'active' | 'inactive' | 'enteredInError';
 
-
-
 /**
  *
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type FHIRVersion = '_001' | '_005' | '_006' | '_011' | '_0080' | '_0081' | '_0082' | '_040' | '_050' | '_100' | '_101' | '_102' | '_110' | '_140' | '_160' | '_180' | '_300' | '_301' | '_330' | '_350' | '_400' | '_401';
-
-
+export type FHIRVersion =
+  | '_001'
+  | '_005'
+  | '_006'
+  | '_011'
+  | '_0080'
+  | '_0081'
+  | '_0082'
+  | '_040'
+  | '_050'
+  | '_100'
+  | '_101'
+  | '_102'
+  | '_110'
+  | '_140'
+  | '_160'
+  | '_180'
+  | '_300'
+  | '_301'
+  | '_330'
+  | '_350'
+  | '_400'
+  | '_401';
 
 /**
  * The kind of operation to perform as a part of a property based filter.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type FilterOperator = '_' | 'isA' | 'descendentOf' | 'isNotA' | 'regex' | 'in' | 'notIn' | 'generalizes' | 'exists';
-
-
+export type FilterOperator =
+  | '_'
+  | 'isA'
+  | 'descendentOf'
+  | 'isNotA'
+  | 'regex'
+  | 'in'
+  | 'notIn'
+  | 'generalizes'
+  | 'exists';
 
 /**
  * A code specifying the state of the resource instance.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type FinancialResourceStatusCodes = 'active' | 'cancelled' | 'draft' | 'enteredInError';
-
-
 
 /**
  * Prospective warnings of potential issues when providing care to the patient.
@@ -12293,8 +12302,6 @@ export interface Flag extends DomainResource {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type FlagStatus = 'active' | 'inactive' | 'enteredInError';
-
-
 
 /**
  * Describes the intended objective(s) for a patient, group or organization care, for example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
@@ -12375,9 +12382,16 @@ export interface Goal extends DomainResource {
  * Codes that reflect the current state of a goal and whether the goal is still being targeted.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type GoalLifecycleStatus = 'proposed' | 'planned' | 'accepted' | 'active' | 'onHold' | 'completed' | 'cancelled' | 'enteredInError' | 'rejected';
-
-
+export type GoalLifecycleStatus =
+  | 'proposed'
+  | 'planned'
+  | 'accepted'
+  | 'active'
+  | 'onHold'
+  | 'completed'
+  | 'cancelled'
+  | 'enteredInError'
+  | 'rejected';
 
 /**
  * Describes the intended objective(s) for a patient, group or organization care, for example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
@@ -12431,15 +12445,11 @@ export interface GoalTarget extends BackboneElement {
  */
 export type GraphCompartmentRule = 'identical' | 'matching' | 'different' | 'custom';
 
-
-
 /**
  * Defines how a compartment rule is used.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type GraphCompartmentUse = 'condition' | 'requirement';
-
-
 
 /**
  * A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.
@@ -12681,8 +12691,6 @@ export interface GroupCharacteristic extends BackboneElement {
  */
 export type GroupMeasure = 'mean' | 'median' | 'meanOfMean' | 'meanOfMedian' | 'medianOfMean' | 'medianOfMedian';
 
-
-
 /**
  * Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively, and are not formally or legally recognized; i.e. a collection of entities that isn't an Organization.
  */
@@ -12706,8 +12714,6 @@ export interface GroupMember extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type GroupType = 'person' | 'animal' | 'practitioner' | 'device' | 'medication' | 'substance';
-
-
 
 /**
  * A guidance response is the formal response to a guidance request, including any output parameters returned by the evaluation, as well as the description of any proposed actions to be taken.
@@ -12788,9 +12794,13 @@ export interface GuidanceResponse extends DomainResource {
  * The status of a guidance response.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type GuidanceResponseStatus = 'success' | 'dataRequested' | 'dataRequired' | 'inProgress' | 'failure' | 'enteredInError';
-
-
+export type GuidanceResponseStatus =
+  | 'success'
+  | 'dataRequested'
+  | 'dataRequired'
+  | 'inProgress'
+  | 'failure'
+  | 'enteredInError';
 
 /**
  * A code that indicates how the page is generated.
@@ -12798,15 +12808,21 @@ export type GuidanceResponseStatus = 'success' | 'dataRequested' | 'dataRequired
  */
 export type GuidePageGeneration = 'html' | 'markdown' | 'xml' | 'generated';
 
-
-
 /**
  * Code of parameter that is input to the guide.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type GuideParameterCode = 'apply' | 'pathResource' | 'pathPages' | 'pathTxCache' | 'expansionParameter' | 'ruleBrokenLinks' | 'generateXml' | 'generateJson' | 'generateTurtle' | 'htmlTemplate';
-
-
+export type GuideParameterCode =
+  | 'apply'
+  | 'pathResource'
+  | 'pathPages'
+  | 'pathTxCache'
+  | 'expansionParameter'
+  | 'ruleBrokenLinks'
+  | 'generateXml'
+  | 'generateJson'
+  | 'generateTurtle'
+  | 'htmlTemplate';
 
 /**
  * The details of a healthcare service available at a location.
@@ -12967,8 +12983,6 @@ export interface HealthcareServiceNotAvailable extends BackboneElement {
  */
 export type HTTPVerb = 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
 
-
-
 /**
  * A human's name with the ability to identify parts and usage.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
@@ -13048,16 +13062,11 @@ export interface Identifier extends Element {
  */
 export type IdentifierUse = 'usual' | 'official' | 'temp' | 'secondary' | 'old';
 
-
-
 /**
  * The level of confidence that this link represents the same actual person, based on NIST Authentication Levels.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type IdentityAssuranceLevel = 'level1' | 'level2' | 'level3' | 'level4';
-
-
-
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
@@ -13241,8 +13250,6 @@ export interface ImagingStudySeries extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ImagingStudyStatus = 'registered' | 'available' | 'cancelled' | 'enteredInError' | 'unknown';
-
-
 
 /**
  * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
@@ -13462,8 +13469,6 @@ export interface ImmunizationEvaluation extends DomainResource {
  */
 export type ImmunizationEvaluationStatusCodes = 'completed' | 'enteredInError';
 
-
-
 /**
  * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
  */
@@ -13638,8 +13643,6 @@ export interface ImmunizationRecommendationRecommendation extends BackboneElemen
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ImmunizationStatusCodes = 'completed' | 'enteredInError' | 'notDone';
-
-
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -13965,7 +13968,6 @@ export interface ImplementationGuideTemplate extends BackboneElement {
  */
 export type instant = string;
 
-
 /**
  * Details of a Health Insurance product/plan provided by an organization.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -14210,8 +14212,6 @@ export interface InsurancePlanSpecificCost extends BackboneElement {
  */
 export type integer = number;
 
-
-
 /**
  * Invoice containing collected ChargeItems from an Account with calculated individual and total price for Billing purpose.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -14347,15 +14347,11 @@ export interface InvoicePriceComponent extends BackboneElement {
  */
 export type InvoicePriceComponentType = 'base' | 'surcharge' | 'deduction' | 'discount' | 'tax' | 'informational';
 
-
-
 /**
  * Codes identifying the lifecycle stage of an Invoice.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type InvoiceStatus = 'draft' | 'issued' | 'balanced' | 'cancelled' | 'enteredInError';
-
-
 
 /**
  * How the issue affects the success of the action.
@@ -14363,15 +14359,42 @@ export type InvoiceStatus = 'draft' | 'issued' | 'balanced' | 'cancelled' | 'ent
  */
 export type IssueSeverity = 'fatal' | 'error' | 'warning' | 'information';
 
-
-
 /**
  * A code that describes the type of issue.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type IssueType = 'invalid' | 'structure' | 'required' | 'value' | 'invariant' | 'security' | 'login' | 'unknown' | 'expired' | 'forbidden' | 'suppressed' | 'processing' | 'notSupported' | 'duplicate' | 'multipleMatches' | 'notFound' | 'deleted' | 'tooLong' | 'codeInvalid' | 'extension' | 'tooCostly' | 'businessRule' | 'conflict' | 'transient' | 'lockError' | 'noStore' | 'exception' | 'timeout' | 'incomplete' | 'throttled' | 'informational';
-
-
+export type IssueType =
+  | 'invalid'
+  | 'structure'
+  | 'required'
+  | 'value'
+  | 'invariant'
+  | 'security'
+  | 'login'
+  | 'unknown'
+  | 'expired'
+  | 'forbidden'
+  | 'suppressed'
+  | 'processing'
+  | 'notSupported'
+  | 'duplicate'
+  | 'multipleMatches'
+  | 'notFound'
+  | 'deleted'
+  | 'tooLong'
+  | 'codeInvalid'
+  | 'extension'
+  | 'tooCostly'
+  | 'businessRule'
+  | 'conflict'
+  | 'transient'
+  | 'lockError'
+  | 'noStore'
+  | 'exception'
+  | 'timeout'
+  | 'incomplete'
+  | 'throttled'
+  | 'informational';
 
 /**
  * The Library resource is a general-purpose container for knowledge asset definitions. It can be used to describe and expose existing knowledge assets such as logic libraries and information model descriptions, as well as to describe a collection of knowledge assets.
@@ -14547,15 +14570,11 @@ export interface LinkageItem extends BackboneElement {
  */
 export type LinkageType = 'source' | 'alternate' | 'historical';
 
-
-
 /**
  * The type of link between this patient resource and another patient resource.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type LinkType = 'replacedBy' | 'replaces' | 'refer' | 'seealso';
-
-
 
 /**
  * A list is a curated collection of resources.
@@ -14644,15 +14663,11 @@ export interface ListEntry extends BackboneElement {
  */
 export type ListMode = 'working' | 'snapshot' | 'changes';
 
-
-
 /**
  * The current state of the list.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ListStatus = 'current' | 'retired' | 'enteredInError';
-
-
 
 /**
  * Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
@@ -14757,8 +14772,6 @@ export interface LocationHoursOfOperation extends BackboneElement {
  */
 export type LocationMode = 'instance' | 'kind';
 
-
-
 /**
  * Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
  */
@@ -14783,15 +14796,12 @@ export interface LocationPosition extends BackboneElement {
  */
 export type LocationStatus = 'active' | 'suspended' | 'inactive';
 
-
-
 /**
  * A string that may contain Github Flavored Markdown syntax for optional processing by a mark down presentation engine
  * Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  */
 export type markdown = string;
-
 
 /**
  * The marketing status describes the date when a medicinal product is actually put on the market or the date as of which it is no longer available.
@@ -15182,8 +15192,6 @@ export interface MeasureReportPopulation1 extends BackboneElement {
  */
 export type MeasureReportStatus = 'complete' | 'pending' | 'error';
 
-
-
 /**
  * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
  */
@@ -15225,8 +15233,6 @@ export interface MeasureReportStratum extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type MeasureReportType = 'individual' | 'subjectList' | 'summary' | 'dataCollection';
-
-
 
 /**
  * The Measure resource provides the definition of a quality measure.
@@ -16292,17 +16298,29 @@ export interface MedicationRequestInitialFill extends BackboneElement {
  * The kind of medication order.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type MedicationRequestIntent = 'proposal' | 'plan' | 'order' | 'originalOrder' | 'reflexOrder' | 'fillerOrder' | 'instanceOrder' | 'option';
-
-
+export type MedicationRequestIntent =
+  | 'proposal'
+  | 'plan'
+  | 'order'
+  | 'originalOrder'
+  | 'reflexOrder'
+  | 'fillerOrder'
+  | 'instanceOrder'
+  | 'option';
 
 /**
  * A coded concept specifying the state of the prescribing event. Describes the lifecycle of the prescription.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type MedicationRequestStatus = 'active' | 'onHold' | 'cancelled' | 'completed' | 'enteredInError' | 'stopped' | 'draft' | 'unknown';
-
-
+export type MedicationRequestStatus =
+  | 'active'
+  | 'onHold'
+  | 'cancelled'
+  | 'completed'
+  | 'enteredInError'
+  | 'stopped'
+  | 'draft'
+  | 'unknown';
 
 /**
  * An order or request for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationRequest" rather than "MedicationPrescription" or "MedicationOrder" to generalize the use across inpatient and outpatient settings, including care plans, etc., and to harmonize with workflow patterns.
@@ -16412,8 +16430,6 @@ export interface MedicationStatement extends DomainResource {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type MedicationStatusCodes = 'active' | 'inactive' | 'enteredInError';
-
-
 
 /**
  * Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).
@@ -17565,8 +17581,6 @@ export interface MessageHeaderResponse extends BackboneElement {
  */
 export type MessageheaderResponseRequest = 'always' | 'onError' | 'never' | 'onSuccess';
 
-
-
 /**
  * The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.
  */
@@ -17598,8 +17612,6 @@ export interface MessageHeaderSource extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type MessageSignificanceCategory = 'consequence' | 'currency' | 'notification';
-
-
 
 /**
  * The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
@@ -17980,8 +17992,6 @@ export interface Money extends Element {
  */
 export type NameUse = 'usual' | 'official' | 'temp' | 'nickname' | 'anonymous' | 'old' | 'maiden';
 
-
-
 /**
  * A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a "System" used within the Identifier and Coding data types.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -18047,15 +18057,11 @@ export interface NamingSystem extends DomainResource {
  */
 export type NamingSystemIdentifierType = 'oid' | 'uuid' | 'uri' | 'other';
 
-
-
 /**
  * Identifies the purpose of the naming system.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type NamingSystemType = 'codesystem' | 'identifier' | 'root';
-
-
 
 /**
  * A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a "System" used within the Identifier and Coding data types.
@@ -18104,15 +18110,11 @@ export interface Narrative extends Element {
  */
 export type NarrativeStatus = 'generated' | 'extensions' | 'additional' | 'empty';
 
-
-
 /**
  *
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type NoteType = 'display' | 'print' | 'printoper';
-
-
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
@@ -18562,9 +18564,18 @@ export interface ObservationComponent extends BackboneElement {
  * Permitted data type for observation value.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ObservationDataType = 'Quantity' | 'CodeableConcept' | 'string' | 'boolean' | 'integer' | 'Range' | 'Ratio' | 'SampledData' | 'time' | 'dateTime' | 'Period';
-
-
+export type ObservationDataType =
+  | 'Quantity'
+  | 'CodeableConcept'
+  | 'string'
+  | 'boolean'
+  | 'integer'
+  | 'Range'
+  | 'Ratio'
+  | 'SampledData'
+  | 'time'
+  | 'dateTime'
+  | 'Period';
 
 /**
  * Set of definitional characteristics for a kind of observation or measurement produced or consumed by an orderable health care service.
@@ -18691,8 +18702,6 @@ export interface ObservationDefinitionQuantitativeDetails extends BackboneElemen
  */
 export type ObservationRangeCategory = 'reference' | 'critical' | 'absolute';
 
-
-
 /**
  * Measurements and simple assertions made about a patient, device or other subject.
  */
@@ -18727,9 +18736,15 @@ export interface ObservationReferenceRange extends BackboneElement {
  * Indicates the status of the identified issue.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ObservationStatus = 'registered' | 'preliminary' | 'final' | 'amended' | 'corrected' | 'cancelled' | 'enteredInError' | 'unknown';
-
-
+export type ObservationStatus =
+  | 'registered'
+  | 'preliminary'
+  | 'final'
+  | 'amended'
+  | 'corrected'
+  | 'cancelled'
+  | 'enteredInError'
+  | 'unknown';
 
 /**
  * An OID represented as a URI
@@ -18737,7 +18752,6 @@ export type ObservationStatus = 'registered' | 'preliminary' | 'final' | 'amende
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  */
 export type oid = string;
-
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
@@ -18948,8 +18962,6 @@ export interface OperationDefinitionReferencedFrom extends BackboneElement {
  */
 export type OperationKind = 'operation' | 'query';
 
-
-
 /**
  * A collection of error, warning, or information messages that result from a system action.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -18998,8 +19010,6 @@ export interface OperationOutcomeIssue extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type OperationParameterUse = 'in' | 'out';
-
-
 
 /**
  * A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.
@@ -19130,8 +19140,6 @@ export interface OrganizationContact extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type OrientationType = 'sense' | 'antisense';
-
-
 
 /**
  * The parameters to the module. This collection specifies both the input and output parameters. Input parameters are provided by the caller as part of the $evaluate operation. Output parameters are included in the GuidanceResponse.
@@ -19403,15 +19411,11 @@ export interface ParametersParameter extends BackboneElement {
  */
 export type ParticipantRequired = 'required' | 'optional' | 'informationOnly';
 
-
-
 /**
  * The Participation status of an appointment.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ParticipationStatus = 'accepted' | 'declined' | 'tentative' | 'needsAction';
-
-
 
 /**
  * Demographics and other administrative information about an individual or animal receiving care or other health-related services.
@@ -20251,7 +20255,6 @@ export interface Population extends BackboneElement {
  */
 export type positiveInt = number;
 
-
 /**
  * A person who is directly or indirectly involved in the provisioning of healthcare.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -20668,15 +20671,11 @@ export interface ProductShelfLife extends BackboneElement {
  */
 export type PropertyRepresentation = 'xmlAttr' | 'xmlText' | 'typeAttr' | 'cdaText' | 'xhtml';
 
-
-
 /**
  * The type of a property value.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type PropertyType = 'code' | 'Coding' | 'string' | 'integer' | 'boolean' | 'dateTime' | 'decimal';
-
-
 
 /**
  * Provenance of a resource is a record that describes entities and processes involved in producing and delivering or otherwise influencing that resource. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. Provenance assertions are a form of contextual metadata and can themselves become important records with their own provenance. Provenance statement indicates clinical significance in terms of confidence in authenticity, reliability, and trustworthiness, integrity, and stage in lifecycle (e.g. Document Completion - has the artifact been legally authenticated), all of which may impact security, privacy, and trust policies.
@@ -20775,23 +20774,17 @@ export interface ProvenanceEntity extends BackboneElement {
  */
 export type ProvenanceEntityRole = 'derivation' | 'revision' | 'quotation' | 'source' | 'removal';
 
-
-
 /**
  *
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type PublicationStatus = 'draft' | 'active' | 'retired' | 'unknown';
 
-
-
 /**
  * Type for quality report.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type QualityType = 'indel' | 'snp' | 'unknown';
-
-
 
 /**
  * A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.
@@ -20825,8 +20818,6 @@ export interface Quantity extends Element {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type QuantityComparator = '_' | '_1' | '_2' | '_3';
-
-
 
 /**
  * A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.
@@ -21149,15 +21140,27 @@ export interface QuestionnaireItem extends BackboneElement {
  */
 export type QuestionnaireItemOperator = 'exists' | '_' | '_1' | '_2' | '_3' | '_4' | '_5';
 
-
-
 /**
  * Distinguishes groups from questions and display text and indicates data type for questions.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type QuestionnaireItemType = 'group' | 'display' | 'boolean' | 'decimal' | 'integer' | 'date' | 'dateTime' | 'time' | 'string' | 'text' | 'url' | 'choice' | 'openChoice' | 'attachment' | 'reference' | 'quantity';
-
-
+export type QuestionnaireItemType =
+  | 'group'
+  | 'display'
+  | 'boolean'
+  | 'decimal'
+  | 'integer'
+  | 'date'
+  | 'dateTime'
+  | 'time'
+  | 'string'
+  | 'text'
+  | 'url'
+  | 'choice'
+  | 'openChoice'
+  | 'attachment'
+  | 'reference'
+  | 'quantity';
 
 /**
  * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.
@@ -21300,8 +21303,6 @@ export interface QuestionnaireResponseItem extends BackboneElement {
  */
 export type QuestionnaireResponseStatus = 'inProgress' | 'completed' | 'amended' | 'enteredInError' | 'stopped';
 
-
-
 /**
  * A set of ordered Quantities defined by a low and high limit.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
@@ -21363,15 +21364,11 @@ export interface Reference extends Element {
  */
 export type ReferenceHandlingPolicy = 'literal' | 'logical' | 'resolves' | 'enforced' | 'local';
 
-
-
 /**
  * Whether a reference needs to be version specific or version independent, or whether either can be used.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ReferenceVersionRules = 'either' | 'independent' | 'specific';
-
-
 
 /**
  * Related artifacts such as additional documentation, justification, or bibliographic references.
@@ -21412,9 +21409,15 @@ export interface RelatedArtifact extends Element {
  * The type of relationship to the related artifact.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type RelatedArtifactType = 'documentation' | 'justification' | 'citation' | 'predecessor' | 'successor' | 'derivedFrom' | 'dependsOn' | 'composedOf';
-
-
+export type RelatedArtifactType =
+  | 'documentation'
+  | 'justification'
+  | 'citation'
+  | 'predecessor'
+  | 'successor'
+  | 'derivedFrom'
+  | 'dependsOn'
+  | 'composedOf';
 
 /**
  * Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.
@@ -21491,15 +21494,11 @@ export interface RelatedPersonCommunication extends BackboneElement {
  */
 export type RemittanceOutcome = 'queued' | 'complete' | 'error' | 'partial';
 
-
-
 /**
  * Type for access of external URI.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type RepositoryType = 'directlink' | 'openapi' | 'login' | 'oauth' | 'other';
-
-
 
 /**
  * A group of related requests that can be used to capture intended activities that have inter-dependencies such as "give this medication after that one".
@@ -21722,9 +21721,16 @@ export interface RequestGroupRelatedAction extends BackboneElement {
  * Codes indicating the degree of authority/intentionality associated with a request.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type RequestIntent = 'proposal' | 'plan' | 'directive' | 'order' | 'originalOrder' | 'reflexOrder' | 'fillerOrder' | 'instanceOrder' | 'option';
-
-
+export type RequestIntent =
+  | 'proposal'
+  | 'plan'
+  | 'directive'
+  | 'order'
+  | 'originalOrder'
+  | 'reflexOrder'
+  | 'fillerOrder'
+  | 'instanceOrder'
+  | 'option';
 
 /**
  * Identifies the level of importance to be assigned to actioning the request.
@@ -21732,23 +21738,32 @@ export type RequestIntent = 'proposal' | 'plan' | 'directive' | 'order' | 'origi
  */
 export type RequestPriority = 'routine' | 'urgent' | 'asap' | 'stat';
 
-
-
 /**
  * The kind of activity the definition is describing.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type RequestResourceType = 'Appointment' | 'AppointmentResponse' | 'CarePlan' | 'Claim' | 'CommunicationRequest' | 'Contract' | 'DeviceRequest' | 'EnrollmentRequest' | 'ImmunizationRecommendation' | 'MedicationRequest' | 'NutritionOrder' | 'ServiceRequest' | 'SupplyRequest' | 'Task' | 'VisionPrescription';
-
-
+export type RequestResourceType =
+  | 'Appointment'
+  | 'AppointmentResponse'
+  | 'CarePlan'
+  | 'Claim'
+  | 'CommunicationRequest'
+  | 'Contract'
+  | 'DeviceRequest'
+  | 'EnrollmentRequest'
+  | 'ImmunizationRecommendation'
+  | 'MedicationRequest'
+  | 'NutritionOrder'
+  | 'ServiceRequest'
+  | 'SupplyRequest'
+  | 'Task'
+  | 'VisionPrescription';
 
 /**
  * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type RequestStatus = 'draft' | 'active' | 'onHold' | 'revoked' | 'completed' | 'enteredInError' | 'unknown';
-
-
 
 /**
  * The ResearchDefinition resource describes the conditional state (population and any exposures being compared within the population) and outcome (if specified) that the knowledge (evidence, assertion, recommendation) is about.
@@ -22136,8 +22151,6 @@ export interface ResearchElementDefinitionCharacteristic extends BackboneElement
  */
 export type ResearchElementType = 'population' | 'exposure' | 'outcome';
 
-
-
 /**
  * A process where a researcher or organization plans and then executes a series of steps intended to increase the field of healthcare-related knowledge.  This includes studies of safety, efficacy, comparative effectiveness and other information about medications, devices, therapies and other interventional and investigative techniques.  A ResearchStudy involves the gathering of information about human or animal subjects.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -22277,9 +22290,18 @@ export interface ResearchStudyObjective extends BackboneElement {
  * Codes that convey the current status of the research study.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ResearchStudyStatus = 'active' | 'administrativelyCompleted' | 'approved' | 'closedToAccrual' | 'closedToAccrualAndIntervention' | 'completed' | 'disapproved' | 'inReview' | 'temporarilyClosedToAccrual' | 'temporarilyClosedToAccrualAndIntervention' | 'withdrawn';
-
-
+export type ResearchStudyStatus =
+  | 'active'
+  | 'administrativelyCompleted'
+  | 'approved'
+  | 'closedToAccrual'
+  | 'closedToAccrualAndIntervention'
+  | 'completed'
+  | 'disapproved'
+  | 'inReview'
+  | 'temporarilyClosedToAccrual'
+  | 'temporarilyClosedToAccrualAndIntervention'
+  | 'withdrawn';
 
 /**
  * A physical entity which is the primary unit of operational and/or administrative interest in a study.
@@ -22324,9 +22346,20 @@ export interface ResearchSubject extends DomainResource {
  * Indicates the progression of a study subject through a study.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ResearchSubjectStatus = 'candidate' | 'eligible' | 'followUp' | 'ineligible' | 'notRegistered' | 'offStudy' | 'onStudy' | 'onStudyIntervention' | 'onStudyObservation' | 'pendingOnStudy' | 'potentialCandidate' | 'screening' | 'withdrawn';
-
-
+export type ResearchSubjectStatus =
+  | 'candidate'
+  | 'eligible'
+  | 'followUp'
+  | 'ineligible'
+  | 'notRegistered'
+  | 'offStudy'
+  | 'onStudy'
+  | 'onStudyIntervention'
+  | 'onStudyObservation'
+  | 'pendingOnStudy'
+  | 'potentialCandidate'
+  | 'screening'
+  | 'withdrawn';
 
 /**
  * This is the base resource type for everything.
@@ -22350,14 +22383,159 @@ export interface Resource {
   language?: code;
 }
 
-
 /**
  * The type of resource.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type ResourceType = 'Account' | 'ActivityDefinition' | 'AdverseEvent' | 'AllergyIntolerance' | 'Appointment' | 'AppointmentResponse' | 'AuditEvent' | 'Basic' | 'Binary' | 'BiologicallyDerivedProduct' | 'BodyStructure' | 'Bundle' | 'CapabilityStatement' | 'CarePlan' | 'CareTeam' | 'CatalogEntry' | 'ChargeItem' | 'ChargeItemDefinition' | 'Claim' | 'ClaimResponse' | 'ClinicalImpression' | 'CodeSystem' | 'Communication' | 'CommunicationRequest' | 'CompartmentDefinition' | 'Composition' | 'ConceptMap' | 'Condition' | 'Consent' | 'Contract' | 'Coverage' | 'CoverageEligibilityRequest' | 'CoverageEligibilityResponse' | 'DetectedIssue' | 'Device' | 'DeviceDefinition' | 'DeviceMetric' | 'DeviceRequest' | 'DeviceUseStatement' | 'DiagnosticReport' | 'DocumentManifest' | 'DocumentReference' | 'DomainResource' | 'EffectEvidenceSynthesis' | 'Encounter' | 'Endpoint' | 'EnrollmentRequest' | 'EnrollmentResponse' | 'EpisodeOfCare' | 'EventDefinition' | 'Evidence' | 'EvidenceVariable' | 'ExampleScenario' | 'ExplanationOfBenefit' | 'FamilyMemberHistory' | 'Flag' | 'Goal' | 'GraphDefinition' | 'Group' | 'GuidanceResponse' | 'HealthcareService' | 'ImagingStudy' | 'Immunization' | 'ImmunizationEvaluation' | 'ImmunizationRecommendation' | 'ImplementationGuide' | 'InsurancePlan' | 'Invoice' | 'Library' | 'Linkage' | 'List' | 'Location' | 'Measure' | 'MeasureReport' | 'Media' | 'Medication' | 'MedicationAdministration' | 'MedicationDispense' | 'MedicationKnowledge' | 'MedicationRequest' | 'MedicationStatement' | 'MedicinalProduct' | 'MedicinalProductAuthorization' | 'MedicinalProductContraindication' | 'MedicinalProductIndication' | 'MedicinalProductIngredient' | 'MedicinalProductInteraction' | 'MedicinalProductManufactured' | 'MedicinalProductPackaged' | 'MedicinalProductPharmaceutical' | 'MedicinalProductUndesirableEffect' | 'MessageDefinition' | 'MessageHeader' | 'MolecularSequence' | 'NamingSystem' | 'NutritionOrder' | 'Observation' | 'ObservationDefinition' | 'OperationDefinition' | 'OperationOutcome' | 'Organization' | 'OrganizationAffiliation' | 'Parameters' | 'Patient' | 'PaymentNotice' | 'PaymentReconciliation' | 'Person' | 'PlanDefinition' | 'Practitioner' | 'PractitionerRole' | 'Procedure' | 'Provenance' | 'Questionnaire' | 'QuestionnaireResponse' | 'RelatedPerson' | 'RequestGroup' | 'ResearchDefinition' | 'ResearchElementDefinition' | 'ResearchStudy' | 'ResearchSubject' | 'Resource' | 'RiskAssessment' | 'RiskEvidenceSynthesis' | 'Schedule' | 'SearchParameter' | 'ServiceRequest' | 'Slot' | 'Specimen' | 'SpecimenDefinition' | 'StructureDefinition' | 'StructureMap' | 'Subscription' | 'Substance' | 'SubstanceNucleicAcid' | 'SubstancePolymer' | 'SubstanceProtein' | 'SubstanceReferenceInformation' | 'SubstanceSourceMaterial' | 'SubstanceSpecification' | 'SupplyDelivery' | 'SupplyRequest' | 'Task' | 'TerminologyCapabilities' | 'TestReport' | 'TestScript' | 'ValueSet' | 'VerificationResult' | 'VisionPrescription';
-
-
+export type ResourceType =
+  | 'Account'
+  | 'ActivityDefinition'
+  | 'AdverseEvent'
+  | 'AllergyIntolerance'
+  | 'Appointment'
+  | 'AppointmentResponse'
+  | 'AuditEvent'
+  | 'Basic'
+  | 'Binary'
+  | 'BiologicallyDerivedProduct'
+  | 'BodyStructure'
+  | 'Bundle'
+  | 'CapabilityStatement'
+  | 'CarePlan'
+  | 'CareTeam'
+  | 'CatalogEntry'
+  | 'ChargeItem'
+  | 'ChargeItemDefinition'
+  | 'Claim'
+  | 'ClaimResponse'
+  | 'ClinicalImpression'
+  | 'CodeSystem'
+  | 'Communication'
+  | 'CommunicationRequest'
+  | 'CompartmentDefinition'
+  | 'Composition'
+  | 'ConceptMap'
+  | 'Condition'
+  | 'Consent'
+  | 'Contract'
+  | 'Coverage'
+  | 'CoverageEligibilityRequest'
+  | 'CoverageEligibilityResponse'
+  | 'DetectedIssue'
+  | 'Device'
+  | 'DeviceDefinition'
+  | 'DeviceMetric'
+  | 'DeviceRequest'
+  | 'DeviceUseStatement'
+  | 'DiagnosticReport'
+  | 'DocumentManifest'
+  | 'DocumentReference'
+  | 'DomainResource'
+  | 'EffectEvidenceSynthesis'
+  | 'Encounter'
+  | 'Endpoint'
+  | 'EnrollmentRequest'
+  | 'EnrollmentResponse'
+  | 'EpisodeOfCare'
+  | 'EventDefinition'
+  | 'Evidence'
+  | 'EvidenceVariable'
+  | 'ExampleScenario'
+  | 'ExplanationOfBenefit'
+  | 'FamilyMemberHistory'
+  | 'Flag'
+  | 'Goal'
+  | 'GraphDefinition'
+  | 'Group'
+  | 'GuidanceResponse'
+  | 'HealthcareService'
+  | 'ImagingStudy'
+  | 'Immunization'
+  | 'ImmunizationEvaluation'
+  | 'ImmunizationRecommendation'
+  | 'ImplementationGuide'
+  | 'InsurancePlan'
+  | 'Invoice'
+  | 'Library'
+  | 'Linkage'
+  | 'List'
+  | 'Location'
+  | 'Measure'
+  | 'MeasureReport'
+  | 'Media'
+  | 'Medication'
+  | 'MedicationAdministration'
+  | 'MedicationDispense'
+  | 'MedicationKnowledge'
+  | 'MedicationRequest'
+  | 'MedicationStatement'
+  | 'MedicinalProduct'
+  | 'MedicinalProductAuthorization'
+  | 'MedicinalProductContraindication'
+  | 'MedicinalProductIndication'
+  | 'MedicinalProductIngredient'
+  | 'MedicinalProductInteraction'
+  | 'MedicinalProductManufactured'
+  | 'MedicinalProductPackaged'
+  | 'MedicinalProductPharmaceutical'
+  | 'MedicinalProductUndesirableEffect'
+  | 'MessageDefinition'
+  | 'MessageHeader'
+  | 'MolecularSequence'
+  | 'NamingSystem'
+  | 'NutritionOrder'
+  | 'Observation'
+  | 'ObservationDefinition'
+  | 'OperationDefinition'
+  | 'OperationOutcome'
+  | 'Organization'
+  | 'OrganizationAffiliation'
+  | 'Parameters'
+  | 'Patient'
+  | 'PaymentNotice'
+  | 'PaymentReconciliation'
+  | 'Person'
+  | 'PlanDefinition'
+  | 'Practitioner'
+  | 'PractitionerRole'
+  | 'Procedure'
+  | 'Provenance'
+  | 'Questionnaire'
+  | 'QuestionnaireResponse'
+  | 'RelatedPerson'
+  | 'RequestGroup'
+  | 'ResearchDefinition'
+  | 'ResearchElementDefinition'
+  | 'ResearchStudy'
+  | 'ResearchSubject'
+  | 'Resource'
+  | 'RiskAssessment'
+  | 'RiskEvidenceSynthesis'
+  | 'Schedule'
+  | 'SearchParameter'
+  | 'ServiceRequest'
+  | 'Slot'
+  | 'Specimen'
+  | 'SpecimenDefinition'
+  | 'StructureDefinition'
+  | 'StructureMap'
+  | 'Subscription'
+  | 'Substance'
+  | 'SubstanceNucleicAcid'
+  | 'SubstancePolymer'
+  | 'SubstanceProtein'
+  | 'SubstanceReferenceInformation'
+  | 'SubstanceSourceMaterial'
+  | 'SubstanceSpecification'
+  | 'SupplyDelivery'
+  | 'SupplyRequest'
+  | 'Task'
+  | 'TerminologyCapabilities'
+  | 'TestReport'
+  | 'TestScript'
+  | 'ValueSet'
+  | 'VerificationResult'
+  | 'VisionPrescription';
 
 /**
  * How the system supports versioning for a resource.
@@ -22365,23 +22543,17 @@ export type ResourceType = 'Account' | 'ActivityDefinition' | 'AdverseEvent' | '
  */
 export type ResourceVersionPolicy = 'noVersion' | 'versioned' | 'versionedUpdate';
 
-
-
 /**
  * The kind of response to a message.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type ResponseType = 'ok' | 'transientError' | 'fatalError';
 
-
-
 /**
  * The mode of a RESTful capability statement.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type RestfulCapabilityMode = 'client' | 'server';
-
-
 
 /**
  * An assessment of the likely outcome(s) for a patient or other subject as well as the likelihood of each outcome.
@@ -22781,7 +22953,6 @@ export interface SampledData extends Element {
  */
 export type sampledDataDataType = string;
 
-
 /**
  * A container for slots of time that may be available for booking appointments.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -22827,23 +22998,29 @@ export interface Schedule extends DomainResource {
  */
 export type SearchComparator = 'eq' | 'ne' | 'gt' | 'lt' | 'ge' | 'le' | 'sa' | 'eb' | 'ap';
 
-
-
 /**
  * Why an entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type SearchEntryMode = 'match' | 'include' | 'outcome';
 
-
-
 /**
  * A supported modifier for a search parameter.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type SearchModifierCode = 'missing' | 'exact' | 'contains' | 'not' | 'text' | 'in' | 'notIn' | 'below' | 'above' | 'type' | 'identifier' | 'ofType';
-
-
+export type SearchModifierCode =
+  | 'missing'
+  | 'exact'
+  | 'contains'
+  | 'not'
+  | 'text'
+  | 'in'
+  | 'notIn'
+  | 'below'
+  | 'above'
+  | 'type'
+  | 'identifier'
+  | 'ofType';
 
 /**
  * A search parameter that defines a named search item that can be used to search/filter on a resource.
@@ -22974,17 +23151,22 @@ export interface SearchParameterComponent extends BackboneElement {
  *
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type SearchParamType = 'number' | 'date' | 'string' | 'token' | 'reference' | 'composite' | 'quantity' | 'uri' | 'special';
-
-
+export type SearchParamType =
+  | 'number'
+  | 'date'
+  | 'string'
+  | 'token'
+  | 'reference'
+  | 'composite'
+  | 'quantity'
+  | 'uri'
+  | 'special';
 
 /**
  * Type if a sequence -- DNA, RNA, or amino acid sequence.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type SequenceType = 'aa' | 'dna' | 'rna';
-
-
 
 /**
  * A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.
@@ -23186,8 +23368,6 @@ export interface Signature extends Element {
  */
 export type SlicingRules = 'closed' | 'open' | 'openAtEnd';
 
-
-
 /**
  * A slot of time on a schedule that may be available for booking appointments.
  * If the element is present, it must have either a @value, an @id, or extensions
@@ -23245,23 +23425,363 @@ export interface Slot extends DomainResource {
  */
 export type SlotStatus = 'busy' | 'free' | 'busyUnavailable' | 'busyTentative' | 'enteredInError';
 
-
-
 /**
  * The possible sort directions, ascending or descending.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type SortDirection = 'ascending' | 'descending';
 
-
-
 /**
  * The license that applies to an Implementation Guide (using an SPDX license Identifiers, or 'not-open-source'). The binding is required but new SPDX license Identifiers are allowed to be used (https://spdx.org/licenses/).
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type SPDXLicense = 'notOpenSource' | '_0BSD' | 'AAL' | 'Abstyles' | 'Adobe2006' | 'AdobeGlyph' | 'ADSL' | 'AFL11' | 'AFL12' | 'AFL20' | 'AFL21' | 'AFL30' | 'Afmparse' | 'AGPL10Only' | 'AGPL10OrLater' | 'AGPL30Only' | 'AGPL30OrLater' | 'Aladdin' | 'AMDPLPA' | 'AML' | 'AMPAS' | 'ANTLRPD' | 'Apache10' | 'Apache11' | 'Apache20' | 'APAFML' | 'APL10' | 'APSL10' | 'APSL11' | 'APSL12' | 'APSL20' | 'Artistic10Cl8' | 'Artistic10Perl' | 'Artistic10' | 'Artistic20' | 'Bahyph' | 'Barr' | 'Beerware' | 'BitTorrent10' | 'BitTorrent11' | 'Borceux' | 'BSD1Clause' | 'BSD2ClauseFreeBSD' | 'BSD2ClauseNetBSD' | 'BSD2ClausePatent' | 'BSD2Clause' | 'BSD3ClauseAttribution' | 'BSD3ClauseClear' | 'BSD3ClauseLBNL' | 'BSD3ClauseNoNuclearLicense2014' | 'BSD3ClauseNoNuclearLicense' | 'BSD3ClauseNoNuclearWarranty' | 'BSD3Clause' | 'BSD4ClauseUC' | 'BSD4Clause' | 'BSDProtection' | 'BSDSourceCode' | 'BSL10' | 'bzip2105' | 'bzip2106' | 'Caldera' | 'CATOSL11' | 'CCBY10' | 'CCBY20' | 'CCBY25' | 'CCBY30' | 'CCBY40' | 'CCBYNC10' | 'CCBYNC20' | 'CCBYNC25' | 'CCBYNC30' | 'CCBYNC40' | 'CCBYNCND10' | 'CCBYNCND20' | 'CCBYNCND25' | 'CCBYNCND30' | 'CCBYNCND40' | 'CCBYNCSA10' | 'CCBYNCSA20' | 'CCBYNCSA25' | 'CCBYNCSA30' | 'CCBYNCSA40' | 'CCBYND10' | 'CCBYND20' | 'CCBYND25' | 'CCBYND30' | 'CCBYND40' | 'CCBYSA10' | 'CCBYSA20' | 'CCBYSA25' | 'CCBYSA30' | 'CCBYSA40' | 'CC010' | 'CDDL10' | 'CDDL11' | 'CDLAPermissive10' | 'CDLASharing10' | 'CECILL10' | 'CECILL11' | 'CECILL20' | 'CECILL21' | 'CECILLB' | 'CECILLC' | 'ClArtistic' | 'CNRIJython' | 'CNRIPythonGPLCompatible' | 'CNRIPython' | 'Condor11' | 'CPAL10' | 'CPL10' | 'CPOL102' | 'Crossword' | 'CrystalStacker' | 'CUAOPL10' | 'Cube' | 'curl' | 'DFSL10' | 'diffmark' | 'DOC' | 'Dotseqn' | 'DSDP' | 'dvipdfm' | 'ECL10' | 'ECL20' | 'EFL10' | 'EFL20' | 'eGenix' | 'Entessa' | 'EPL10' | 'EPL20' | 'ErlPL11' | 'EUDatagrid' | 'EUPL10' | 'EUPL11' | 'EUPL12' | 'Eurosym' | 'Fair' | 'Frameworx10' | 'FreeImage' | 'FSFAP' | 'FSFUL' | 'FSFULLR' | 'FTL' | 'GFDL11Only' | 'GFDL11OrLater' | 'GFDL12Only' | 'GFDL12OrLater' | 'GFDL13Only' | 'GFDL13OrLater' | 'Giftware' | 'GL2PS' | 'Glide' | 'Glulxe' | 'gnuplot' | 'GPL10Only' | 'GPL10OrLater' | 'GPL20Only' | 'GPL20OrLater' | 'GPL30Only' | 'GPL30OrLater' | 'gSOAP13b' | 'HaskellReport' | 'HPND' | 'IBMPibs' | 'ICU' | 'IJG' | 'ImageMagick' | 'iMatix' | 'Imlib2' | 'InfoZIP' | 'IntelACPI' | 'Intel' | 'Interbase10' | 'IPA' | 'IPL10' | 'ISC' | 'JasPer20' | 'JSON' | 'LAL12' | 'LAL13' | 'Latex2e' | 'Leptonica' | 'LGPL20Only' | 'LGPL20OrLater' | 'LGPL21Only' | 'LGPL21OrLater' | 'LGPL30Only' | 'LGPL30OrLater' | 'LGPLLR' | 'Libpng' | 'libtiff' | 'LiLiQP11' | 'LiLiQR11' | 'LiLiQRplus11' | 'LinuxOpenIB' | 'LPL10' | 'LPL102' | 'LPPL10' | 'LPPL11' | 'LPPL12' | 'LPPL13a' | 'LPPL13c' | 'MakeIndex' | 'MirOS' | 'MIT0' | 'MITAdvertising' | 'MITCMU' | 'MITEnna' | 'MITFeh' | 'MIT' | 'MITNFA' | 'Motosoto' | 'mpich2' | 'MPL10' | 'MPL11' | 'MPL20NoCopyleftException' | 'MPL20' | 'MSPL' | 'MSRL' | 'MTLL' | 'Multics' | 'Mup' | 'NASA13' | 'Naumen' | 'NBPL10' | 'NCSA' | 'NetSNMP' | 'NetCDF' | 'Newsletr' | 'NGPL' | 'NLOD10' | 'NLPL' | 'Nokia' | 'NOSL' | 'Noweb' | 'NPL10' | 'NPL11' | 'NPOSL30' | 'NRL' | 'NTP' | 'OCCTPL' | 'OCLC20' | 'ODbL10' | 'OFL10' | 'OFL11' | 'OGTSL' | 'OLDAP11' | 'OLDAP12' | 'OLDAP13' | 'OLDAP14' | 'OLDAP201' | 'OLDAP20' | 'OLDAP21' | 'OLDAP221' | 'OLDAP222' | 'OLDAP22' | 'OLDAP23' | 'OLDAP24' | 'OLDAP25' | 'OLDAP26' | 'OLDAP27' | 'OLDAP28' | 'OML' | 'OpenSSL' | 'OPL10' | 'OSETPL21' | 'OSL10' | 'OSL11' | 'OSL20' | 'OSL21' | 'OSL30' | 'PDDL10' | 'PHP30' | 'PHP301' | 'Plexus' | 'PostgreSQL' | 'psfrag' | 'psutils' | 'Python20' | 'Qhull' | 'QPL10' | 'Rdisc' | 'RHeCos11' | 'RPL11' | 'RPL15' | 'RPSL10' | 'RSAMD' | 'RSCPL' | 'Ruby' | 'SAXPD' | 'Saxpath' | 'SCEA' | 'Sendmail' | 'SGIB10' | 'SGIB11' | 'SGIB20' | 'SimPL20' | 'SISSL12' | 'SISSL' | 'Sleepycat' | 'SMLNJ' | 'SMPPL' | 'SNIA' | 'Spencer86' | 'Spencer94' | 'Spencer99' | 'SPL10' | 'SugarCRM113' | 'SWL' | 'TCL' | 'TCPWrappers' | 'TMate' | 'TORQUE11' | 'TOSL' | 'UnicodeDFS2015' | 'UnicodeDFS2016' | 'UnicodeTOU' | 'Unlicense' | 'UPL10' | 'Vim' | 'VOSTROM' | 'VSL10' | 'W3C19980720' | 'W3C20150513' | 'W3C' | 'Watcom10' | 'Wsuipa' | 'WTFPL' | 'X11' | 'Xerox' | 'XFree8611' | 'xinetd' | 'Xnet' | 'xpp' | 'XSkat' | 'YPL10' | 'YPL11' | 'Zed' | 'Zend20' | 'Zimbra13' | 'Zimbra14' | 'zlibAcknowledgement' | 'Zlib' | 'ZPL11' | 'ZPL20' | 'ZPL21';
-
-
+export type SPDXLicense =
+  | 'notOpenSource'
+  | '_0BSD'
+  | 'AAL'
+  | 'Abstyles'
+  | 'Adobe2006'
+  | 'AdobeGlyph'
+  | 'ADSL'
+  | 'AFL11'
+  | 'AFL12'
+  | 'AFL20'
+  | 'AFL21'
+  | 'AFL30'
+  | 'Afmparse'
+  | 'AGPL10Only'
+  | 'AGPL10OrLater'
+  | 'AGPL30Only'
+  | 'AGPL30OrLater'
+  | 'Aladdin'
+  | 'AMDPLPA'
+  | 'AML'
+  | 'AMPAS'
+  | 'ANTLRPD'
+  | 'Apache10'
+  | 'Apache11'
+  | 'Apache20'
+  | 'APAFML'
+  | 'APL10'
+  | 'APSL10'
+  | 'APSL11'
+  | 'APSL12'
+  | 'APSL20'
+  | 'Artistic10Cl8'
+  | 'Artistic10Perl'
+  | 'Artistic10'
+  | 'Artistic20'
+  | 'Bahyph'
+  | 'Barr'
+  | 'Beerware'
+  | 'BitTorrent10'
+  | 'BitTorrent11'
+  | 'Borceux'
+  | 'BSD1Clause'
+  | 'BSD2ClauseFreeBSD'
+  | 'BSD2ClauseNetBSD'
+  | 'BSD2ClausePatent'
+  | 'BSD2Clause'
+  | 'BSD3ClauseAttribution'
+  | 'BSD3ClauseClear'
+  | 'BSD3ClauseLBNL'
+  | 'BSD3ClauseNoNuclearLicense2014'
+  | 'BSD3ClauseNoNuclearLicense'
+  | 'BSD3ClauseNoNuclearWarranty'
+  | 'BSD3Clause'
+  | 'BSD4ClauseUC'
+  | 'BSD4Clause'
+  | 'BSDProtection'
+  | 'BSDSourceCode'
+  | 'BSL10'
+  | 'bzip2105'
+  | 'bzip2106'
+  | 'Caldera'
+  | 'CATOSL11'
+  | 'CCBY10'
+  | 'CCBY20'
+  | 'CCBY25'
+  | 'CCBY30'
+  | 'CCBY40'
+  | 'CCBYNC10'
+  | 'CCBYNC20'
+  | 'CCBYNC25'
+  | 'CCBYNC30'
+  | 'CCBYNC40'
+  | 'CCBYNCND10'
+  | 'CCBYNCND20'
+  | 'CCBYNCND25'
+  | 'CCBYNCND30'
+  | 'CCBYNCND40'
+  | 'CCBYNCSA10'
+  | 'CCBYNCSA20'
+  | 'CCBYNCSA25'
+  | 'CCBYNCSA30'
+  | 'CCBYNCSA40'
+  | 'CCBYND10'
+  | 'CCBYND20'
+  | 'CCBYND25'
+  | 'CCBYND30'
+  | 'CCBYND40'
+  | 'CCBYSA10'
+  | 'CCBYSA20'
+  | 'CCBYSA25'
+  | 'CCBYSA30'
+  | 'CCBYSA40'
+  | 'CC010'
+  | 'CDDL10'
+  | 'CDDL11'
+  | 'CDLAPermissive10'
+  | 'CDLASharing10'
+  | 'CECILL10'
+  | 'CECILL11'
+  | 'CECILL20'
+  | 'CECILL21'
+  | 'CECILLB'
+  | 'CECILLC'
+  | 'ClArtistic'
+  | 'CNRIJython'
+  | 'CNRIPythonGPLCompatible'
+  | 'CNRIPython'
+  | 'Condor11'
+  | 'CPAL10'
+  | 'CPL10'
+  | 'CPOL102'
+  | 'Crossword'
+  | 'CrystalStacker'
+  | 'CUAOPL10'
+  | 'Cube'
+  | 'curl'
+  | 'DFSL10'
+  | 'diffmark'
+  | 'DOC'
+  | 'Dotseqn'
+  | 'DSDP'
+  | 'dvipdfm'
+  | 'ECL10'
+  | 'ECL20'
+  | 'EFL10'
+  | 'EFL20'
+  | 'eGenix'
+  | 'Entessa'
+  | 'EPL10'
+  | 'EPL20'
+  | 'ErlPL11'
+  | 'EUDatagrid'
+  | 'EUPL10'
+  | 'EUPL11'
+  | 'EUPL12'
+  | 'Eurosym'
+  | 'Fair'
+  | 'Frameworx10'
+  | 'FreeImage'
+  | 'FSFAP'
+  | 'FSFUL'
+  | 'FSFULLR'
+  | 'FTL'
+  | 'GFDL11Only'
+  | 'GFDL11OrLater'
+  | 'GFDL12Only'
+  | 'GFDL12OrLater'
+  | 'GFDL13Only'
+  | 'GFDL13OrLater'
+  | 'Giftware'
+  | 'GL2PS'
+  | 'Glide'
+  | 'Glulxe'
+  | 'gnuplot'
+  | 'GPL10Only'
+  | 'GPL10OrLater'
+  | 'GPL20Only'
+  | 'GPL20OrLater'
+  | 'GPL30Only'
+  | 'GPL30OrLater'
+  | 'gSOAP13b'
+  | 'HaskellReport'
+  | 'HPND'
+  | 'IBMPibs'
+  | 'ICU'
+  | 'IJG'
+  | 'ImageMagick'
+  | 'iMatix'
+  | 'Imlib2'
+  | 'InfoZIP'
+  | 'IntelACPI'
+  | 'Intel'
+  | 'Interbase10'
+  | 'IPA'
+  | 'IPL10'
+  | 'ISC'
+  | 'JasPer20'
+  | 'JSON'
+  | 'LAL12'
+  | 'LAL13'
+  | 'Latex2e'
+  | 'Leptonica'
+  | 'LGPL20Only'
+  | 'LGPL20OrLater'
+  | 'LGPL21Only'
+  | 'LGPL21OrLater'
+  | 'LGPL30Only'
+  | 'LGPL30OrLater'
+  | 'LGPLLR'
+  | 'Libpng'
+  | 'libtiff'
+  | 'LiLiQP11'
+  | 'LiLiQR11'
+  | 'LiLiQRplus11'
+  | 'LinuxOpenIB'
+  | 'LPL10'
+  | 'LPL102'
+  | 'LPPL10'
+  | 'LPPL11'
+  | 'LPPL12'
+  | 'LPPL13a'
+  | 'LPPL13c'
+  | 'MakeIndex'
+  | 'MirOS'
+  | 'MIT0'
+  | 'MITAdvertising'
+  | 'MITCMU'
+  | 'MITEnna'
+  | 'MITFeh'
+  | 'MIT'
+  | 'MITNFA'
+  | 'Motosoto'
+  | 'mpich2'
+  | 'MPL10'
+  | 'MPL11'
+  | 'MPL20NoCopyleftException'
+  | 'MPL20'
+  | 'MSPL'
+  | 'MSRL'
+  | 'MTLL'
+  | 'Multics'
+  | 'Mup'
+  | 'NASA13'
+  | 'Naumen'
+  | 'NBPL10'
+  | 'NCSA'
+  | 'NetSNMP'
+  | 'NetCDF'
+  | 'Newsletr'
+  | 'NGPL'
+  | 'NLOD10'
+  | 'NLPL'
+  | 'Nokia'
+  | 'NOSL'
+  | 'Noweb'
+  | 'NPL10'
+  | 'NPL11'
+  | 'NPOSL30'
+  | 'NRL'
+  | 'NTP'
+  | 'OCCTPL'
+  | 'OCLC20'
+  | 'ODbL10'
+  | 'OFL10'
+  | 'OFL11'
+  | 'OGTSL'
+  | 'OLDAP11'
+  | 'OLDAP12'
+  | 'OLDAP13'
+  | 'OLDAP14'
+  | 'OLDAP201'
+  | 'OLDAP20'
+  | 'OLDAP21'
+  | 'OLDAP221'
+  | 'OLDAP222'
+  | 'OLDAP22'
+  | 'OLDAP23'
+  | 'OLDAP24'
+  | 'OLDAP25'
+  | 'OLDAP26'
+  | 'OLDAP27'
+  | 'OLDAP28'
+  | 'OML'
+  | 'OpenSSL'
+  | 'OPL10'
+  | 'OSETPL21'
+  | 'OSL10'
+  | 'OSL11'
+  | 'OSL20'
+  | 'OSL21'
+  | 'OSL30'
+  | 'PDDL10'
+  | 'PHP30'
+  | 'PHP301'
+  | 'Plexus'
+  | 'PostgreSQL'
+  | 'psfrag'
+  | 'psutils'
+  | 'Python20'
+  | 'Qhull'
+  | 'QPL10'
+  | 'Rdisc'
+  | 'RHeCos11'
+  | 'RPL11'
+  | 'RPL15'
+  | 'RPSL10'
+  | 'RSAMD'
+  | 'RSCPL'
+  | 'Ruby'
+  | 'SAXPD'
+  | 'Saxpath'
+  | 'SCEA'
+  | 'Sendmail'
+  | 'SGIB10'
+  | 'SGIB11'
+  | 'SGIB20'
+  | 'SimPL20'
+  | 'SISSL12'
+  | 'SISSL'
+  | 'Sleepycat'
+  | 'SMLNJ'
+  | 'SMPPL'
+  | 'SNIA'
+  | 'Spencer86'
+  | 'Spencer94'
+  | 'Spencer99'
+  | 'SPL10'
+  | 'SugarCRM113'
+  | 'SWL'
+  | 'TCL'
+  | 'TCPWrappers'
+  | 'TMate'
+  | 'TORQUE11'
+  | 'TOSL'
+  | 'UnicodeDFS2015'
+  | 'UnicodeDFS2016'
+  | 'UnicodeTOU'
+  | 'Unlicense'
+  | 'UPL10'
+  | 'Vim'
+  | 'VOSTROM'
+  | 'VSL10'
+  | 'W3C19980720'
+  | 'W3C20150513'
+  | 'W3C'
+  | 'Watcom10'
+  | 'Wsuipa'
+  | 'WTFPL'
+  | 'X11'
+  | 'Xerox'
+  | 'XFree8611'
+  | 'xinetd'
+  | 'Xnet'
+  | 'xpp'
+  | 'XSkat'
+  | 'YPL10'
+  | 'YPL11'
+  | 'Zed'
+  | 'Zend20'
+  | 'Zimbra13'
+  | 'Zimbra14'
+  | 'zlibAcknowledgement'
+  | 'Zlib'
+  | 'ZPL11'
+  | 'ZPL20'
+  | 'ZPL21';
 
 /**
  * A sample to be used for analysis.
@@ -23369,8 +23889,6 @@ export interface SpecimenCollection extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type SpecimenContainedPreference = 'preferred' | 'alternate';
-
-
 
 /**
  * A sample to be used for analysis.
@@ -23585,25 +24103,17 @@ export interface SpecimenProcessing extends BackboneElement {
  */
 export type SpecimenStatus = 'available' | 'unavailable' | 'unsatisfactory' | 'enteredInError';
 
-
-
 /**
  * The validation status of the target.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type Status = 'attested' | 'validated' | 'inProcess' | 'reqRevalid' | 'valFail' | 'revalFail';
 
-
-
 /**
  * Type for strand.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type StrandType = 'watson' | 'crick';
-
-
-
-
 
 /**
  * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types.
@@ -23750,8 +24260,6 @@ export interface StructureDefinitionDifferential extends BackboneElement {
  */
 export type StructureDefinitionKind = 'primitiveType' | 'complexType' | 'resource' | 'logical';
 
-
-
 /**
  * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types.
  */
@@ -23869,8 +24377,6 @@ export interface StructureMap extends DomainResource {
  */
 export type StructureMapContextType = 'type' | 'variable';
 
-
-
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
  */
@@ -23921,8 +24427,6 @@ export interface StructureMapGroup extends BackboneElement {
  */
 export type StructureMapGroupTypeMode = 'none' | 'types' | 'typeAndTypes';
 
-
-
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
  */
@@ -23951,15 +24455,11 @@ export interface StructureMapInput extends BackboneElement {
  */
 export type StructureMapInputMode = 'source' | 'target';
 
-
-
 /**
  * How the referenced structure is used in this mapping.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type StructureMapModelMode = 'source' | 'queried' | 'target' | 'produced';
-
-
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -24269,8 +24769,6 @@ export interface StructureMapSource extends BackboneElement {
  */
 export type StructureMapSourceListMode = 'first' | 'notFirst' | 'last' | 'notLast' | 'onlyOne';
 
-
-
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
  */
@@ -24337,15 +24835,28 @@ export interface StructureMapTarget extends BackboneElement {
  */
 export type StructureMapTargetListMode = 'first' | 'share' | 'last' | 'collate';
 
-
-
 /**
  * How data is copied/created.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type StructureMapTransform = 'create' | 'copy' | 'truncate' | 'escape' | 'cast' | 'append' | 'translate' | 'reference' | 'dateOp' | 'uuid' | 'pointer' | 'evaluate' | 'cc' | 'c' | 'qty' | 'id' | 'cp';
-
-
+export type StructureMapTransform =
+  | 'create'
+  | 'copy'
+  | 'truncate'
+  | 'escape'
+  | 'cast'
+  | 'append'
+  | 'translate'
+  | 'reference'
+  | 'dateOp'
+  | 'uuid'
+  | 'pointer'
+  | 'evaluate'
+  | 'cc'
+  | 'c'
+  | 'qty'
+  | 'id'
+  | 'cp';
 
 /**
  * The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system can take an appropriate action.
@@ -24410,15 +24921,11 @@ export interface SubscriptionChannel extends BackboneElement {
  */
 export type SubscriptionChannelType = 'restHook' | 'websocket' | 'email' | 'sms' | 'message';
 
-
-
 /**
  * The status of a subscription.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type SubscriptionStatus = 'requested' | 'active' | 'error' | 'off';
-
-
 
 /**
  * A homogeneous material with a definite composition.
@@ -25632,8 +26139,6 @@ export interface SupplyDelivery extends DomainResource {
  */
 export type SupplyDeliveryStatus = 'inProgress' | 'completed' | 'abandoned' | 'enteredInError';
 
-
-
 /**
  * Record of delivery of what is supplied.
  */
@@ -25761,17 +26266,20 @@ export interface SupplyRequestParameter extends BackboneElement {
  * Status of the supply request.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type SupplyRequestStatus = 'draft' | 'active' | 'suspended' | 'cancelled' | 'completed' | 'enteredInError' | 'unknown';
-
-
+export type SupplyRequestStatus =
+  | 'draft'
+  | 'active'
+  | 'suspended'
+  | 'cancelled'
+  | 'completed'
+  | 'enteredInError'
+  | 'unknown';
 
 /**
  * Operations supported by REST at the system level.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type SystemRestfulInteraction = 'transaction' | 'batch' | 'searchSystem' | 'historySystem';
-
-
 
 /**
  * A task to be performed.
@@ -26118,9 +26626,16 @@ export interface TaskInput extends BackboneElement {
  * Distinguishes whether the task is a proposal, plan or full order.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type TaskIntent = 'unknown' | 'proposal' | 'plan' | 'order' | 'originalOrder' | 'reflexOrder' | 'fillerOrder' | 'instanceOrder' | 'option';
-
-
+export type TaskIntent =
+  | 'unknown'
+  | 'proposal'
+  | 'plan'
+  | 'order'
+  | 'originalOrder'
+  | 'reflexOrder'
+  | 'fillerOrder'
+  | 'instanceOrder'
+  | 'option';
 
 /**
  * A task to be performed.
@@ -26354,9 +26869,19 @@ export interface TaskRestriction extends BackboneElement {
  * The current status of the task.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type TaskStatus = 'draft' | 'requested' | 'received' | 'accepted' | 'rejected' | 'ready' | 'cancelled' | 'inProgress' | 'onHold' | 'failed' | 'completed' | 'enteredInError';
-
-
+export type TaskStatus =
+  | 'draft'
+  | 'requested'
+  | 'received'
+  | 'accepted'
+  | 'rejected'
+  | 'ready'
+  | 'cancelled'
+  | 'inProgress'
+  | 'onHold'
+  | 'failed'
+  | 'completed'
+  | 'enteredInError';
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -26720,8 +27245,6 @@ export interface TestReportAction2 extends BackboneElement {
  */
 export type TestReportActionResult = 'pass' | 'skip' | 'fail' | 'warning' | 'error';
 
-
-
 /**
  * A summary of information based on the results of executing a TestScript.
  */
@@ -26782,15 +27305,11 @@ export interface TestReportParticipant extends BackboneElement {
  */
 export type TestReportParticipantType = 'testEngine' | 'client' | 'server';
 
-
-
 /**
  * The reported execution result.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type TestReportResult = 'pass' | 'fail' | 'pending';
-
-
 
 /**
  * A summary of information based on the results of executing a TestScript.
@@ -26807,8 +27326,6 @@ export interface TestReportSetup extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type TestReportStatus = 'completed' | 'inProgress' | 'waiting' | 'stopped' | 'enteredInError';
-
-
 
 /**
  * A summary of information based on the results of executing a TestScript.
@@ -27275,8 +27792,6 @@ export interface TestScriptRequestHeader extends BackboneElement {
  */
 export type TestScriptRequestMethodCode = 'delete' | 'get' | 'options' | 'patch' | 'post' | 'put' | 'head';
 
-
-
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
  */
@@ -27358,7 +27873,6 @@ export interface TestScriptVariable extends BackboneElement {
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type time = string;
-
 
 /**
  * Specifies an event that may occur multiple times. Timing schedules are used to record when things are planned, expected or requested to occur. The most common usage is in dosage instructions for medications. They are also used when planning care of various kinds, and may be used for reporting the schedule to which past regular activities were carried out.
@@ -27497,9 +28011,15 @@ export interface TriggerDefinition extends Element {
  * The type of trigger.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type TriggerType = 'namedEvent' | 'periodic' | 'dataChanged' | 'dataAdded' | 'dataModified' | 'dataRemoved' | 'dataAccessed' | 'dataAccessEnded';
-
-
+export type TriggerType =
+  | 'namedEvent'
+  | 'periodic'
+  | 'dataChanged'
+  | 'dataAdded'
+  | 'dataModified'
+  | 'dataRemoved'
+  | 'dataAccessed'
+  | 'dataAccessEnded';
 
 /**
  * How a type relates to its baseDefinition.
@@ -27507,15 +28027,20 @@ export type TriggerType = 'namedEvent' | 'periodic' | 'dataChanged' | 'dataAdded
  */
 export type TypeDerivationRule = 'specialization' | 'constraint';
 
-
-
 /**
  * Operations supported by REST at the type or instance level.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-export type TypeRestfulInteraction = 'read' | 'vread' | 'update' | 'patch' | 'delete' | 'historyInstance' | 'historyType' | 'create' | 'searchType';
-
-
+export type TypeRestfulInteraction =
+  | 'read'
+  | 'vread'
+  | 'update'
+  | 'patch'
+  | 'delete'
+  | 'historyInstance'
+  | 'historyType'
+  | 'create'
+  | 'searchType';
 
 /**
  * Codes to identify how UDI data was entered.
@@ -27523,22 +28048,17 @@ export type TypeRestfulInteraction = 'read' | 'vread' | 'update' | 'patch' | 'de
  */
 export type UDIEntryType = 'barcode' | 'rfid' | 'manual' | 'card' | 'selfReported' | 'unknown';
 
-
-
 /**
  * A unit of time (units from UCUM).
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type UnitsOfTime = 's' | 'min' | 'h' | 'd' | 'wk' | 'mo' | 'a';
 
-
-
 /**
  * An integer with a value that is not negative (e.g. >= 0)
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  */
 export type unsignedInt = number;
-
 
 /**
  * String of characters used to identify a name or a resource
@@ -27547,13 +28067,11 @@ export type unsignedInt = number;
  */
 export type uri = string;
 
-
 /**
  * A URI that is a literal reference
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  */
 export type url = string;
-
 
 /**
  * Specifies clinical/business/etc. metadata that can be used to retrieve, index and/or categorize an artifact. This metadata can either be specific to the applicable population (e.g., age category, DRG) or the specific context of care (e.g., venue, care setting, provider of care).
@@ -27588,15 +28106,12 @@ export interface UsageContext extends Element {
  */
 export type Use = 'claim' | 'preauthorization' | 'predetermination';
 
-
-
 /**
  * A UUID, represented as a URI
  * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
  * If the element is present, it must have either a @value, an @id referenced from the Narrative, or extensions
  */
 export type uuid = string;
-
 
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
@@ -27891,15 +28406,11 @@ export interface ValueSetParameter extends BackboneElement {
  */
 export type VariableType = 'dichotomous' | 'continuous' | 'descriptive';
 
-
-
 /**
  * Codes specifying the level of confidentiality of the composition.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type VConfidentialityClassification = 'U' | 'L' | 'M' | 'N' | 'R' | 'V';
-
-
 
 /**
  * Describes validation requirements, source(s), status and dates for one or more elements.
@@ -28060,15 +28571,11 @@ export interface VerificationResultValidator extends BackboneElement {
  */
 export type VisionBase = 'up' | 'down' | 'in' | 'out';
 
-
-
 /**
  * A coded concept listing the eye codes.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 export type VisionEyes = 'right' | 'left';
-
-
 
 /**
  * An authorization for the provision of glasses and/or contact lenses to a patient.
