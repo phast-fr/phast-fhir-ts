@@ -1,0 +1,31 @@
+{
+  "name": "phast-fhir-ts",
+  "version": "1.0.0",
+  "description": "Typescript library HL7 FHIR.\nThis library contains all the resources, elements and data types of HL7 FHIR.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "FHIR",
+    "HL7",
+    "typescript"
+  ],
+  "author": "David Ouagne <david.ouagne@phast.fr>",
+  "license": "MIT",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "npm-run-all clean --parallel watch:build watch:server --print-label",
+    "watch:build": "tsc --watch",
+    "watch:server": "nodemon './dist/index.js' --watch './dist'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5"
+  }
+}
