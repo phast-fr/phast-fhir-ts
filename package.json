@@ -1,6 +1,6 @@
 {
   "name": "phast-fhir-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typescript library HL7 FHIR.\nThis library contains all the resources, elements and data types of HL7 FHIR.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -37,5 +37,7 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.3.5"
   },
-  "files": ["lib/**/*"]
+  "files": [
+    "lib/**/*"
+  ]
 }
