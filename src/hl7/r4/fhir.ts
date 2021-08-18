@@ -22366,6 +22366,10 @@ export type ResearchSubjectStatus =
  */
 export interface Resource {
   /**
+   *
+   */
+  resourceType: ResourceType;
+  /**
    * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
    */
   id?: id;
