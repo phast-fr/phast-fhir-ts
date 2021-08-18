@@ -11,5 +11,5 @@ This library contains all the resources, elements and data types of HL7 FHIR
 [license]: LICENSE.md
 
 [npm-url]: https://npmjs.org/package/phast-fhir-ts
-[npm-version-image]: https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.0.0&x2=0
+[npm-version-image]: https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&type=6e&v=1.0.2&x2=0
 
