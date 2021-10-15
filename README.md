@@ -2,7 +2,7 @@
 
 [![MIT License][license-image]][license] [![NPM version][npm-version-image]][npm-url]
 
-Typescript library HL7 FHIR
+Typescript's library HL7 FHIR
 
 This library contains all the resources, elements and data types of HL7 FHIR
 
